@@ -2,7 +2,7 @@ package org.example;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-// import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.awt.Robot;
 import java.awt.AWTException;
@@ -10,9 +10,9 @@ import java.awt.AWTException;
 public class App 
 {
     public static void main(String[] args) {
-        // ChromeOptions options = new ChromeOptions();
-        // options.addArguments("start-maximized");
-        ChromeDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        ChromeDriver driver = new ChromeDriver(options);
 
         driver.get("https://piensoluegoinstalo.com");
 
