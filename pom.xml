@@ -37,11 +37,22 @@
             <artifactId>selenium-chrome-driver</artifactId>
             <version>4.4.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>abbot</groupId>
+            <artifactId>abbot</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 
-
-    <build>
+    <build>    
+        <resources>
+            <resource>
+                <directory>target/lib</directory>
+                <includes>
+                <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -77,6 +88,22 @@
                     </archive>
                 </configuration>
             </plugin>
+            <!-- <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                    <goal>single</goal>
+                    </goals>
+                </execution>
+                </executions>
+                <configuration>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                </configuration>
+            </plugin> -->
         </plugins>
     </build>
 </project>
